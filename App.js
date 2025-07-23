@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.js
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
+import MainScreen from './src/MainScreen';
+import StudentScreen from './src/StudentCard';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  const [currentScreen, setCurrentScreen] = useState('main');
+
+  const navigateToStudent = () => {
+    setCurrentScreen('student');
+  };
+
+  const navigateToMain = () => {
+    setCurrentScreen('main');
+  };
+
+  if (currentScreen === 'student') {
+    return <StudentScreen onBack={navigateToMain} />;
+  }
+
+  return <MainScreen onNavigateToStudent={navigateToStudent} />;
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  // Los estilos están en cada componente individual
 });
