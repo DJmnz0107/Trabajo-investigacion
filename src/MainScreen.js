@@ -13,7 +13,7 @@ import { StatusBar } from 'expo-status-bar';
 
 const MainScreen = ({ onNavigateToStudent }) => {
   const openGitHub = () => {
-    Linking.openURL('https://github.com/DJmnz0107/Navegaci-n-React-Native');
+    Linking.openURL('https://github.com/DJmnz0107/Trabajo-investigacion');
   };
 
   return (
